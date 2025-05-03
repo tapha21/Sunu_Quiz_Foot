@@ -1,8 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Bienvenue sur Sunu Quiz !
-    <br> <h3>beussal si bouton bi khol lo kham si football </h3>
-</h1>
-<a href="{{ url_for('login') }}">Jouer</a> 
+<div class="container">
+  <header>
+    <h1>Bienvenue sur Sunu Quiz !</h1>
+  </header>
+
+  <section class="intro">
+    <p style="text-align:center; font-size: 1.1rem;">
+      Teste tes connaissances en football à travers des quiz amusants et éducatifs. Que tu sois un fan occasionnel ou un passionné, il y a un défi pour toi !
+    </p>
+  </section>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="{{ url_for('login') }}">
+      <button type="button">Jouer</button>
+    </a>
+  </div>
+
+  <section class="info" style="margin-top: 40px;">
+    <div class="question">
+      <p>Pourquoi jouer à Sunu Quiz ?</p>
+      <label>✔️ Améliore ta culture foot</label><br>
+      <label>✔️ Défie tes amis</label><br>
+      <label>✔️ Gagne des points et des badges</label>
+    </div>
+  </section>
+</div>
 {% endblock %}
