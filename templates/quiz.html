@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Quiz</h2>
+<form method="POST">
+    {% for question in questions %}
+    <div class="question">
+        <h3>{{ question.question_text }}</h3>
+        <input type="radio" name="{{ question.id }}" value="A"> {{ question.choice_a }}<br>
+        <input type="radio" name="{{ question.id }}" value="B"> {{ question.choice_b }}<br>
+        <input type="radio" name="{{ question.id }}" value="C"> {{ question.choice_c }}<br>
+        {# Supprimer le choix D s'il n'existe pas dans la base #}
+    </div>
+    {% endfor %}
+    <button type="submit">Soumettre</button>
+</form>  
+{% endblock %}

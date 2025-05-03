@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunu Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sunu Quiz Foot</h1>
+            <nav>
+                <a href="{{ url_for('home') }}">Accueil</a>
+                {% if not current_user.is_authenticated %}
+                <a href="{{ url_for('login') }}">Se connecter</a>
+            {% else %}
+                <a href="{{ url_for('quiz') }}">Quiz</a>
+                <a href="{{ url_for('result') }}">Resultat</a>
+                <a href="{{ url_for('logout') }}">Deconnexion</a>
+            {% endif %}
+            </nav>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>
